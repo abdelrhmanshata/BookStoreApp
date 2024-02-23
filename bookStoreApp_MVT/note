@@ -1,0 +1,8 @@
+cd myapp
+$env:FLASK_APP = "flasky"
+flask shell
+flask db init
+flask db migrate -m 'create books'
+flask db upgrade
+
+// Relation Shipe
