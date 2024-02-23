@@ -4,28 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6c95bb0-3d0b-4f9e-ac4a-4dc7703a82a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/bookStoreApp_MVT.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/books/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/books/views.py" afterDir="false" />
+    <list default="true" id="f6c95bb0-3d0b-4f9e-ac4a-4dc7703a82a8" name="Changes" comment="BookStoreApp">
+      <change afterPath="$PROJECT_DIR$/myapp/books/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/books/parsers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/books/viewsApi.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/myapp/category/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/category/forms.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/myapp/category/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/flasky.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/books/add_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/books/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/books/show_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/books/update_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myapp/templates/layouts/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/note" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/books/add_book_by_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/books/update_book_by_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/category/add_category_by_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/category/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/macros_.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/books/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/books/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/books/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/books/add_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/books/add_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/books/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/books/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/books/show_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/books/show_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/books/update_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/books/update_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/templates/layouts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/layouts/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +63,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Project/Python/bookStoreApp_MVT/myapp/category"
+    "last_opened_file_path": "D:/Project/Python/bookStoreApp_MVT/myapp/templates/books"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\templates\books" />
+      <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\templates\category" />
       <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\category" />
+      <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\templates" />
       <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\books" />
-      <recent name="D:\Project\Python\bookStoreApp_MVT\myapp" />
     </key>
   </component>
   <component name="RunManager">
@@ -111,6 +115,19 @@
       <option name="presentableId" value="Default" />
       <updated>1708499218535</updated>
     </task>
+    <task id="LOCAL-00001" summary="BookStoreApp">
+      <option name="closed" value="true" />
+      <created>1708648397549</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708648397549</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BookStoreApp" />
+    <option name="LAST_COMMIT_MESSAGE" value="BookStoreApp" />
   </component>
 </project>

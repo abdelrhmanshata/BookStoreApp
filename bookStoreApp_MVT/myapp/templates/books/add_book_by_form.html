@@ -1,0 +1,62 @@
+{% extends 'layouts/base.html' %}
+{% import 'macros_.html' as myMacro %}
+{% block content %}
+<div>
+    <div class="d-flex align-items-center mt-2">
+        <a href="{{url_for('books.home')}}" class="btn btn-secondary">Back</a>
+        <h1 class="flex-grow-1 text-center">Add Book By Form</h1>
+    </div>
+    <br/><br/>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {{form.csrf_token}}
+
+        {{myMacro.render_field(form.title)}}
+        {{myMacro.render_field(form.details)}}
+        {{myMacro.render_field(form.pages)}}
+        {{myMacro.render_field(form.price)}}
+        {{myMacro.render_field(form.category_id)}}
+        {{myMacro.render_image_field(form.image)}}
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary" style="width: 150px;">Save</button>
+        </div>
+
+        <!--        <div class="input-group mb-3">-->
+        <!--            {{ form.title.label(class="input-group-text form") }}-->
+        <!--            {{ form.title(class="form-control") }}-->
+        <!--        </div>-->
+
+        <!--        <div class="input-group mb-3">-->
+        <!--            {{ form.details.label(class="input-group-text form") }}-->
+        <!--            {{ form.details(class="form-control") }}-->
+        <!--        </div>-->
+
+        <!--        <div class="input-group mb-3">-->
+        <!--            {{ form.pages.label(class="input-group-text form") }}-->
+        <!--            {{ form.pages(class="form-control") }}-->
+        <!--        </div>-->
+
+        <!--        <div class="input-group mb-3">-->
+        <!--            {{ form.price.label(class="input-group-text form") }}-->
+        <!--            {{ form.price(class="form-control") }}-->
+        <!--        </div>-->
+
+        <!--        <div class="mb-3">-->
+        <!--            <div class="input-group mb-3">-->
+        <!--                {{ form.category_id.label(class="input-group-text form") }}-->
+        <!--                {{ form.category_id(class="form-select") }}-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        <div class="input-group mb-3">-->
+        <!--            {{ form.image.label(class="input-group-text form_file") }}-->
+        <!--            {{ form.image(class="form-control",accept="image/*") }}-->
+        <!--        </div>-->
+        <!--        -->
+        <!--        <div class="mb-3 text-center">-->
+        <!--            <button type="submit" class="btn btn-primary" style="width: 150px;">Save</button>-->
+        <!--        </div>-->
+
+
+    </form>
+</div>
+{% endblock %}

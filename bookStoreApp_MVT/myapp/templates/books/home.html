@@ -1,27 +1,30 @@
 {% extends 'layouts/base.html' %}
 {% block title %}
-  Home
+Home
 {% endblock %}
 {% block content %}
-  <div class="text-center">
+<div class="text-center">
     <h1>Home</h1>
-  </div>
-  <br /><br />
-  <div class="d-flex flex-row gap-5 flex-wrap">
+</div>
+<br/><br/>
+<div class="d-flex flex-row gap-5 flex-wrap">
     {% for book in books %}
-      <div class="card p-2" style="width: 18rem;">
-        <img width="150" height="300" src="{{ url_for('static', filename = 'bookImages/' + book.image) }}" class="card-img-top" alt="..." />
+    <div class="card p-2" style="width: 18rem;">
+        <img width="150" height="300" src="{{ url_for('static', filename = 'bookImages/' + book.image) }}"
+             class="card-img-top" alt="..."/>
 
         <div class="card-body text-center">
-          <h3>{{ book.title }}</h3>
+            <h3>{{ book.title }}</h3>
+            <h5 style="color:red;">Category : {{ book.category_name }}</h5>
+
         </div>
 
         <div class="card-body d-flex flex-row justify-content-between">
-          <a href="books/show/{{book.id}}" class="btn btn-primary">Show</a>
-          <a href="books/update/{{book.id}}" class="btn btn-secondary">Edite</a>
-          <a href="books/delete/{{book.id}}" class="btn btn-danger">Delete</a>
+            <a href="{{url_for('books.show', id = book.id)}}" class="btn btn-primary">Show</a>
+            <a href="{{url_for('books.update', id = book.id)}}" class="btn btn-secondary">Edite</a>
+            <a href="{{url_for('books.delete', id = book.id)}}" class="btn btn-danger">Delete</a>
         </div>
-      </div>
+    </div>
     {% endfor %}
-  </div>
+</div>
 {% endblock %}

@@ -5,6 +5,50 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 
 db = SQLAlchemy()
+
+
+class Category(db.Model):
+    __tablename__ = "category"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, unique=True)
+    description = db.Column(db.String, unique=True)
+    books = db.relationship('Book', backref='category_name', lazy=True)
+
+    def __str__(self):
+        return f'{self.name}'
+
+    @classmethod
+    def get_all_categories(cls):
+        return cls.query.all()
+
+    @classmethod
+    def get_category_by_id(cls, id):
+        return cls.query.get_or_404(id)
+
+    @classmethod
+    def delete_category_by_id(cls, id):
+        category = cls.query.get_or_404(id)
+        db.session.delete(category)
+        db.session.commit()
+        return "Done"
+
+    @classmethod
+    def save_category(cls, request_data):  # immutable dict
+        category = cls(**request_data)
+        db.session.add(category)
+        db.session.commit()
+        return category
+
+    @classmethod
+    def update_category(cls, category, request_data):  # immutable dict
+        categoryObj = cls(**request_data)
+        category.name = categoryObj.name
+        category.description = categoryObj.description
+        db.session.commit()
+        return category
+
+# #######################################################################################################
+
 class Book(db.Model):
     __tablename__ = "books"
     id = db.Column(db.Integer, primary_key=True)
@@ -15,6 +59,7 @@ class Book(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     update_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     image = db.Column(db.String, default="book.png")
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=True)
 
     def __str__(self):
         return f"{self.id}/{self.title}/{self.details}/{self.pages}/{self.price}/{self.image}"
@@ -25,7 +70,7 @@ class Book(db.Model):
 
     @property
     def show_url(self):
-        return url_for("book.show", id=self.id)
+        return url_for("books.show", id=self.id)
 
     @classmethod
     def get_all_objects(cls):
@@ -43,7 +88,7 @@ class Book(db.Model):
         return "Done"
 
     @classmethod
-    def save_book(cls, request_data,request_files):  # immutable dict
+    def save_book(cls, request_data, request_files):  # immutable dict
         book = cls(**request_data)
         book.pages = int(book.pages)
         book.price = int(book.price)
@@ -57,7 +102,7 @@ class Book(db.Model):
         return book
 
     @classmethod
-    def update_book(cls,book, request_data,request_files):  # immutable dict
+    def update_book(cls, book, request_data, request_files):  # immutable dict
         bookObj = cls(**request_data)
         book.title = bookObj.title
         book.details = bookObj.details

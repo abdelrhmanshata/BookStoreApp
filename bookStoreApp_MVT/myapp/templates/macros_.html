@@ -1,0 +1,49 @@
+{% macro listobjects(objects) %}
+<table class="table table-striped-columns m-2">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+    </tr>
+    <tbody>
+    {% for obj in objects %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.title }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endmacro %}
+
+
+{% macro render_field(field) %}
+<div>
+    <div class="input-group mb-3">
+        {{field.label(class="input-group-text form") }}
+        {{field(class="form-control")}}
+    </div>
+    {% if field.errors %}
+    <ul class="text-danger">
+        {% for error in field.errors %}
+        <li> {{error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro render_image_field(field) %}
+<div>
+    <div class="input-group mb-3">
+        {{field.label(class="input-group-text form_file") }}
+        {{field(class="form-control",accept="image/*")}}
+    </div>
+    {% if field.errors %}
+    <ul class="text-danger">
+        {% for error in field.errors %}
+        <li> {{error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endmacro %}

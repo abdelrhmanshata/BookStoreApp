@@ -2,6 +2,8 @@ from flask import Flask
 from myapp.config import AppConfig
 from myapp.models import db
 from flask_migrate import Migrate
+from flask_restful import Api
+
 
 def create_app(config_name="prd"):
     # create app
@@ -31,5 +33,15 @@ def create_app(config_name="prd"):
     # introduce  blueprint to the application
     from myapp.books import book_blueprint
     app.register_blueprint(book_blueprint)
+
+    from myapp.category import category_blueprint
+    app.register_blueprint(category_blueprint)
+
+    ### we need to add the API urls
+    api = Api(app)  # generate apis for this project
+    # add the class book resource to the api
+    from myapp.books.viewsApi import BookList, BookResource
+    api.add_resource(BookList, '/api/books')
+    api.add_resource(BookResource, '/api/books/<int:book_id>')
 
     return app
