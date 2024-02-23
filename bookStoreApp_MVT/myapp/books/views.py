@@ -73,7 +73,7 @@ def delete_book(id):
     book = Book.query.get_or_404(id)
     if book:
         Book.delete_book_by_id(id)
-        return redirect("home")
+        return redirect(url_for("books.home"))
     error = "Book Not Found"
     return render_template("error/error.html", error=error)
 
