@@ -27,7 +27,7 @@ Home
         <td>{{category.name}}</td>
          <td>{{category.description}}</td>
         <td>
-            <a href="{{url_for('books.home')}}" class="btn btn-primary">Update</a>
+            <a href="{{url_for('category.updateCategory', id = category.id)}}" class="btn btn-primary">Update</a>
             <a href="{{url_for('category.delete', id = category.id)}}" class="btn btn-danger">Delete</a>
         </td>
     </tr>

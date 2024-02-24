@@ -4,11 +4,18 @@
 <div>
     <div class="d-flex align-items-center mt-2">
         <a href="{{url_for('books.home')}}" class="btn btn-secondary">Back</a>
-        <h1 class="flex-grow-1 text-center">Add Book By Form</h1>
+        <h1 class="flex-grow-1 text-center">Update Book By Form</h1>
     </div>
     <br/><br/>
     <form action="" method="POST" enctype="multipart/form-data">
         {{form.csrf_token}}
+        {{ form.hidden_tag() }}
+
+        <div class="text-center">
+            <img style="width: 100px;" src="{{ url_for('static', filename = 'bookImages/' + book.image) }}"
+                 class="card-img-top w-25" alt="..."/>
+        </div>
+        <br/><br/>
 
         {{myMacro.render_field(form.title)}}
         {{myMacro.render_field(form.details)}}

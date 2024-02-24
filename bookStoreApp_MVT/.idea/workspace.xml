@@ -15,6 +15,7 @@
       <change afterPath="$PROJECT_DIR$/myapp/templates/books/update_book_by_form.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/myapp/templates/category/add_category_by_form.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/myapp/templates/category/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/templates/category/update_category_by_form.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/myapp/templates/macros_.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/__init__.py" afterDir="false" />
@@ -63,13 +64,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Project/Python/bookStoreApp_MVT/myapp/templates/books"
+    "last_opened_file_path": "D:/Project/Python/bookStoreApp_MVT/myapp/templates/category"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\templates\books" />
       <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\templates\category" />
+      <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\templates\books" />
       <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\category" />
       <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\templates" />
       <recent name="D:\Project\Python\bookStoreApp_MVT\myapp\books" />

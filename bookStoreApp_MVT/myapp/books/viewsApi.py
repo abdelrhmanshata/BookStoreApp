@@ -17,6 +17,7 @@ def home():
     print(booksList)
     return booksList
 
+
 category_serilizer = {
     "id": fields.Integer,
     "name": fields.String
@@ -42,7 +43,16 @@ class BookList(Resource):
     @marshal_with(book_serilizer)
     def post(self):
         book_data = book_parser.parse_args()
-        book = Book.save_book(book_data)
+        book = Book()
+        book.title = book_data["title"]
+        book.details = book_data["details"]
+        book.pages = book_data["pages"]
+        book.price = book_data["price"]
+        book.image = book_data["image"]
+        book.category_id = book_data["category_id"]
+        db.session.add(book)
+        db.session.commit()
+
         return book, 201
 
 

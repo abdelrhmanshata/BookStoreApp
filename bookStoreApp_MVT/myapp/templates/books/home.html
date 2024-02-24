@@ -21,7 +21,8 @@ Home
 
         <div class="card-body d-flex flex-row justify-content-between">
             <a href="{{url_for('books.show', id = book.id)}}" class="btn btn-primary">Show</a>
-            <a href="{{url_for('books.update', id = book.id)}}" class="btn btn-secondary">Edite</a>
+<!--            <a href="{{url_for('books.update', id = book.id)}}" class="btn btn-secondary">Edite</a>-->
+            <a href="{{url_for('books.updateByForm', id = book.id)}}" class="btn btn-secondary">Update</a>
             <a href="{{url_for('books.delete', id = book.id)}}" class="btn btn-danger">Delete</a>
         </div>
     </div>

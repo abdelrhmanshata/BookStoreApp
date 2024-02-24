@@ -88,6 +88,15 @@ class Book(db.Model):
         return "Done"
 
     @classmethod
+    def save_book(cls, request_data):  # immutable dict
+        book = cls(**request_data)
+        db.session.add(book)
+        db.session.commit()
+        return book
+
+
+
+    @classmethod
     def save_book(cls, request_data, request_files):  # immutable dict
         book = cls(**request_data)
         book.pages = int(book.pages)
@@ -108,6 +117,7 @@ class Book(db.Model):
         book.details = bookObj.details
         book.pages = int(bookObj.pages)
         book.price = int(bookObj.price)
+        book.category_id = bookObj.category_id
         image = request_files["image"]
         if image:
             imageName = secure_filename(image.filename)
